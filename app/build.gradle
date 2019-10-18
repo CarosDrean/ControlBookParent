@@ -37,4 +37,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.1.0'
     implementation 'de.hdodenhof:circleimageview:3.0.1'
+    implementation 'com.prolificinteractive:material-calendarview:1.4.3'
+    implementation 'com.github.dmytrodanylyk.shadow-layout:library:1.0.3'
+    implementation 'com.firebaseui:firebase-ui-firestore:4.3.2'
 }

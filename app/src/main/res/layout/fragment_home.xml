@@ -61,7 +61,7 @@
 
 
                 <TextView
-                    android:id="@+id/name_aux"
+                    android:id="@+id/name_par"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Romer Cinc"
