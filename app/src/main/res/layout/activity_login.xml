@@ -34,7 +34,7 @@
         android:layout_marginStart="@dimen/margin_auth"
         android:layout_marginTop="@dimen/margin_auth_title"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="Control Book -\nPadre"
+        android:text="@string/control_book_npadre"
         android:textColor="@color/colorTextORIcon"
         android:textSize="@dimen/text_title_size"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +63,7 @@
         android:drawablePadding="@dimen/padding_field"
         android:drawableStart="@drawable/ic_mail"
         android:fontFamily="@font/nunito_sans_reguler"
-        android:hint="Usuario"
+        android:hint="@string/usuario"
         android:inputType="textEmailAddress"
         android:textColor="@color/colorPrimaryText"
         android:textSize="@dimen/text_body_size"
@@ -84,7 +84,7 @@
         android:drawableStart="@drawable/ic_password"
         android:drawablePadding="@dimen/padding_field"
         android:fontFamily="@font/nunito_sans_reguler"
-        android:hint="Contraseña"
+        android:hint="@string/contrase_a"
         android:inputType="textPassword"
         android:padding="@dimen/padding_field"
         android:textColor="@color/colorPrimaryText"
@@ -125,7 +125,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="INGRESAR"
+            android:text="@string/ingresar"
             style="@style/text_card_button" />
 
     </androidx.cardview.widget.CardView>
