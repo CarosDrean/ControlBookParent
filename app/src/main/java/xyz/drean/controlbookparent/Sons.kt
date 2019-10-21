@@ -28,15 +28,15 @@ class Sons : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sons)
 
-        updateCalendar()
+        //updateCalendar()
 
         val contx = intent.getStringExtra("context")
         val idParent = intent.getStringExtra("idParent")
-        if(contx != "assistance") {
+        /*if(contx != "assistance") {
             card_calendar.isVisible = false
-        }
+        }*/
 
-        calendarClick()
+        //calendarClick()
 
         init()
         getData(contx, idParent)
@@ -64,7 +64,7 @@ class Sons : AppCompatActivity() {
         list?.adapter = adapter
     }
 
-    private fun updateCalendar(){
+    /*private fun updateCalendar(){
         calendar_class.setSelectedDate(Calendar.getInstance())
         tv_cal.text = "Fecha: Hoy"
 
@@ -93,7 +93,7 @@ class Sons : AppCompatActivity() {
         val sp = getSharedPreferences("config", Context.MODE_PRIVATE)
         val editor = sp?.edit()
         editor?.putString("dateAssistance", value)?.apply()
-    }
+    }*/
 
     override fun onStart() {
         super.onStart()
