@@ -3,11 +3,13 @@ package xyz.drean.controlbookparent.fragment
 
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -42,17 +44,17 @@ class Home : Fragment() {
             activity?.startActivity(i)
         }
 
-        verifyLogin()
+        verifyLogin(v)
 
         return v
     }
 
-    private fun verifyLogin() {
+    private fun verifyLogin(v: View) {
         if(getPreference("idParent") == "Parent" || getPreference("idParent") == "") {
             val i = Intent(activity, Login::class.java)
             startActivity(i)
         } else {
-            getDataParent()
+            getDataParent(v)
         }
     }
 
@@ -62,7 +64,7 @@ class Home : Fragment() {
         return date!!
     }
 
-    private fun getDataParent() {
+    private fun getDataParent(v: View) {
         val db = FirebaseFirestore.getInstance()
         db.collection("parents")
             .document(getPreference("idParent"))
@@ -71,7 +73,7 @@ class Home : Fragment() {
                 val parent = document.toObject(Parent::class.java)
 
                 if(document.exists()){
-                    name_par.text = parent!!.name
+                    v.name_par.text = parent!!.name
                 }
             }
     }

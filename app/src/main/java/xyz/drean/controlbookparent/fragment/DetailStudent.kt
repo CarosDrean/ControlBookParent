@@ -14,6 +14,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import kotlinx.android.synthetic.main.fragment_detail_student.view.*
 
 import xyz.drean.controlbookparent.R
 import xyz.drean.controlbookparent.adapter.AdapterObservation
@@ -34,6 +35,11 @@ class DetailStudent : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         val v = inflater.inflate(R.layout.fragment_detail_student, container, false)
+
+        v.tv_name_detail.text = arguments!!.getString("name")
+        v.tv_lastname_detail.text = arguments!!.getString("lastname")
+
+        v.iv_back_detail.setOnClickListener { dismiss() }
 
         val idStudent = arguments!!.getString("id")
         val contx = arguments?.getString("contx")

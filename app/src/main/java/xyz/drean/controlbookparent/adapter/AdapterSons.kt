@@ -30,13 +30,15 @@ class AdapterSons(
         holder.name.text = model.name
         holder.lastname.text = model.lastname
 
-        holder.content.setOnClickListener { lead(model.id) }
+        holder.content.setOnClickListener { lead(model.id, model.name!!, model.lastname!!) }
     }
 
-    private fun lead(idClass: String?) {
+    private fun lead(idClass: String?, name: String, lastname: String) {
         val args = Bundle()
         args.putString("id", idClass)
         args.putString("contx", contx)
+        args.putString("name", name)
+        args.putString("lastname", lastname)
         val students = DetailStudent()
         students.arguments = args
         students.show((activity as AppCompatActivity).supportFragmentManager, "Add Class Rom")

@@ -29,7 +29,7 @@ class Profile : Fragment() {
     ): View? {
         val v = inflater.inflate(R.layout.fragment_profile, container, false)
 
-        getDataParent(v)
+        verifyLogin(v)
 
         v.save_acces_assist.setOnClickListener { saveAccess(v) }
 
@@ -40,6 +40,15 @@ class Profile : Fragment() {
         }
 
         return v
+    }
+
+    private fun verifyLogin(v: View) {
+        if(getPreference("idParent") == "Parent" || getPreference("idParent") == "") {
+            val i = Intent(activity, Login::class.java)
+            startActivity(i)
+        } else {
+            getDataParent(v)
+        }
     }
 
     private fun savePreference(idAssistant: String) {
